@@ -1,0 +1,22 @@
+<button (click)="getData()">GET</button> 
+<!-- it calls subscribe method -->
+
+<!-- There after whatever data we got in ts file through subscribe method, displayed here using html aka markup -->
+<div *ngIf="data"> 
+    <table>
+
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+    </thead>
+
+    <tr *ngFor="let product of data">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+
+    </table>
+
+</div>

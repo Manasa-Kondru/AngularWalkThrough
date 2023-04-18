@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~bootstrap/dist/css/bootstrap.css." */
+.heading
+{
+    color:red ;font-weight: bolder;font-size: larger; text-align: center
+
+}
+.labels
+{
+    font-weight: bold;
+}
+.form-group
+{
+    margin: 10px;
+}
+.btn-nselected
+{
+    background-color: gray;
+    color: black;
+    font-weight: normal;
+}
+.subscribe
+{
+    background-color:green;
+}
+.invalid
+{
+    color: red;
+}
+.box
+{
+    margin:10px;
+    padding: 3px;
+    width: fit-content;
+    text-align: justify;
+}
+input.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+input.ng-touched.ng-valid{
+    border:2px solid green;
+}
+.box1
+{
+    margin:10px;
+    padding: 3px;
+    width: fit-content;
+    /* text-align: justify; */
+    border-radius: 20px;
+    border: 5px solid green;
+    float: left;
+   
+}
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+  }

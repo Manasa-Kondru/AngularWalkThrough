@@ -1,0 +1,34 @@
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+    <div class="box">
+        <h3 style="text-align: center;">FEW BUILT-IN PIPES</h3>
+        <h6 style="text-align: center;">currency || date || json || lowercase || uppercase || percent || slice etc...</h6>
+        <ol>
+            <li>Used to transform data before dispalying it in the browser </li>
+            <li>Pipes takes data as input and transform or format that data to some form</li>
+            <li>
+                Syntax : Expression | pipename [:parameters]
+            </li>
+    </ol>
+        <ul>
+<li>{{name | uppercase}}</li>
+<li>{{name | titlecase}}</li>
+<li>{{name | lowercase}}</li>
+<li>{{salary | currency}}</li>
+<li>{{salary | currency :'INR'}}</li>
+<li>{{salary | currency:'INR' :'code'}}</li>
+<li>{{salary | currency:'INR' :'symbol'}}</li>
+<li>{{person}}</li>
+<li>{{person | json}}</li>
+<li>{{dob}}</li>
+<li>{{dob | date}}</li>
+<li>{{dob | date :'dd/MM/yy'}}</li>
+<li>{{dob | date :'dd/MM/yyyy'}}</li>
+<li>{{num |percent}}</li>
+<li>{{company | slice :2}}</li>
+<li>{{company | slice :2 :7}}</li> <!--excludes 7th index-->
+<li>{{wish | customPipes}}</li>
+<li>{{person | customPipes :wish}}</li>
+
+    </ul>
+</div>
+</div>

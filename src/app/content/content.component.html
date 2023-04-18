@@ -1,0 +1,81 @@
+
+    <div class="box">
+       
+       <aside> <ul>
+            <li><a [routerLink]="['/content','/content1']" routerLinkActive="active">Content1</a></li>
+        </ul></aside>
+
+       
+        <h1 style="text-align: center;">CONTENT</h1>
+
+        <div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+        <h6>SAFE TRAVERSAL OPERATOR:</h6>
+        <p style="display: block;text-align: auto;">The Angular safe navigation operator (?.) is a fluent and convenient way to guard against null and undefined values in property paths. 
+            Here it is, protecting against a view render failure if the currentHero is null.</p>
+  
+    <div class="box">
+<b>product?.id.name</b>
+        it checks whether produce object exists and then it will check if there is an id. since you dont have ? after id. it will throw an error "cannot read property of 'name' undefined".</div>
+    
+    </div>
+</div>
+
+    <div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>DECORATORS:</h6>
+    <div [innerHTML]="decorators | slice:0:end"> </div>
+        <span class="text-danger" style="cursor:pointer" (click)="toggleArticle2()">{{linkText}}</span>
+   
+
+</div>
+    <div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+    <h6>DIRECTIVES:</h6>
+    Directives are HtML attributes which tell Angular to change the structure , style or behaviour of the DOM elements.
+    <br>
+    <b>
+        Types:
+    </b>
+    <ol>
+        <li>Structural directives</li>
+        <ul>
+           <li *ngFor="let sdir of strucdir">
+            {{sdir}}
+           </li>
+        </ul>
+        
+        <li>Attribute directives</li>
+        <ul >
+        <li *ngFor="let adir of attdir">{{adir}}</li>
+    </ul>  
+        <li>Component directives</li>
+    </ol>
+    </div>
+    <div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>
+    DIFFERENCES BETWEEN "ng-container" ,"ng-template" and "ng-content"
+</h6>
+<div [innerHTML]="ngtag | slice: 0:end"></div>
+    <span class="text-danger" style="cursor: pointer;" (click)="toggleArticle1()">{{linkText}}</span>
+
+
+</div>
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<div> 
+    <h6>CUSTOM VALIDATIONS:</h6>
+    <ul>
+        <li>We bascically have certain custom validations like required,minLength,maxlength,email etc.
+            <br>
+            But we can also create custom validations either.
+        </li>
+        
+    </ul>
+</div>
+</div>
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>HTTP Module to make API calls</h6>
+<div [innerHTML]="httpsc |slice : 0 : end"></div>
+<span class="text-danger" style="cursor:pointer;" (click)="toggleArticle()">{{linkText}}</span>
+
+</div>
+<div>{{service}}</div>
+

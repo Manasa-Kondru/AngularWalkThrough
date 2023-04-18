@@ -1,0 +1,73 @@
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<form action="" [formGroup]="login">
+    <div>
+    username:<input type="text" class="form-control w-50 m-2" formControlName="uname" placeholder="Manasa" value="Kondru Manasa">
+    <div *ngIf="login.get('uname')?.touched &&login.get('uname')?.hasError('required')" class="invalid">
+        "username is required"
+    </div>
+   <!-- <div *ngIf="login.get('uname')?.touched &&login.get('uname')?.hasError('minlength')">
+        "username has to be minimun 5 characters"
+    </div>-->
+    </div>
+
+
+
+    email:<input type="email" class="form-control w-50 m-2" formControlName="email" placeholder="manasakondru@gmail.com">
+    <div *ngIf="login.get('email')?.touched &&login.get('email')?.hasError('required')" class="invalid">
+        "email is required"
+    </div>
+    <div *ngIf="login.get('email')?.touched &&login.get('email')?.hasError('email')" class="invalid">
+        "invalid email"
+    </div>
+
+
+
+<div formArrayName="mobileNums">
+    <ng-container *ngFor="let m of login.controls['mobileNums']['controls']; let i=index">
+       Mobile Number {{i+1}} :
+       <span class="d-flex"><input type="number" formControlName="{{i}}" class="form-control w-50 m-2">
+       <button (click)="delete(i)">❌</button></span>
+    </ng-container> 
+</div>
+
+<button (click)="Add()">Add</button>
+<br>
+
+    password:<input type="password" class="form-control w-50 m-2" formControlName="password">
+
+    <div *ngIf="login.get('password')?.touched &&login.get('password')?.hasError('required');else t" class="invalid">
+        "password required"
+    </div>
+    <ng-template #t>
+    <div *ngIf="login.get('password')?.touched &&login.get('password')?.hasError('minlength');else tt" class="invalid">
+        "password has to be minimun 8 characters"
+    </div>
+</ng-template>
+<ng-template #tt>
+    <div *ngIf="login.get('password')?.touched &&login.get('password')?.hasError('noupper')" class="invalid"><!--*ngIf="this.login.get('password').errors['noupper']"-->
+        "Atleast one uppercase letter  required"
+    </div>
+</ng-template>
+
+<br>
+    confirm password:<input type="password"  class="form-control w-50 m-2" formControlName="cpassword">
+    <div *ngIf="login.get('cpassword')?.touched &&login.get('cpassword')?.hasError('required');else p" class="invalid">
+        "cpassword required"
+    </div>
+    <ng-template #p>
+    <div *ngIf="login.get('cpassword')?.touched &&login.get('cpassword')?.['value']!=login.controls['password']?.['value']" class="invalid">
+        " password must match"
+    </div>
+    </ng-template>
+
+<br>
+    
+    <button [style.backgroundColor]="isSelected?'blue':'gray'" [style.color]="isSelected?'white':'black'" [style.fontWeight]="isSelected?'bold':'normal'" (click)="show()">click</button> 
+
+    
+</form>
+
+</div>
+<!-- used stylebinding-->
+<!--new FormControl('defaultvalue',[validations],[asyncvalidations])-->
+<!--new FormGroup(object aka collection of formControl instances,[validations],[asyncvalidations])-->

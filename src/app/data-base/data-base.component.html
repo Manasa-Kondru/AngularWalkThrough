@@ -1,0 +1,34 @@
+
+<div >
+    <table>
+
+    <thead>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th>GENDER</th>
+        <th>SUBSCRIBE</th>
+       
+    </thead>
+
+    <tr *ngFor="let d of dbs;index as i">
+        <td>{{dbs[i].u}}</td>
+        <td>{{dbs[i].e}}</td>
+        <td>{{dbs[i].p}}</td>
+        <td>{{dbs[i].g}}</td>
+       
+        <ng-container *ngIf="dbs[i].s; else tt">
+                <td>✔</td>
+            </ng-container>
+            <ng-template #tt>
+                <td>❌</td>
+            </ng-template>
+       
+       
+       
+    </tr>
+
+    </table>
+
+</div>
+<!-- {{dbs | json}} -->

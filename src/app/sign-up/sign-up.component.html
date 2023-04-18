@@ -1,0 +1,155 @@
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+
+    <h1 class="heading">TEMPLATE-DRIVEN FORM</h1>
+    <div style="color:green;text-align: center;">(FROMCONTROL & FORMGROUP) : DIRECTIVES-ngModel,ngModelGroup</div>
+
+    <div class="card w-50 mx-auto ">
+    <h4 class="card-header text-center">Sign Up</h4>
+
+<!-- <form action=""  #f="ngForm" (ngSubmit)="submit(f)">-->
+    
+       
+            <form action=""  #f="ngForm" >
+
+<!--<div ngModelGroup="personal" #grp="ngModelGroup" name="personal">-->
+
+    <div class="form-group">
+        <label class="labels m-2"> username:</label>
+        <input type="text" ngModel name="username" #u="ngModel" class="form-control " minlength="5" required  [(ngModel)]="userName">
+            <div *ngIf="f.controls['username']?.['touched'] && f.controls['username']?.['errors']" class="invalid">
+
+                <div *ngIf="f.controls['username']?.['errors']?.['required']">
+                username is required
+                </div>
+               
+                <div *ngIf="f.controls['username']?.['errors']?.['minlength']">
+                    username must be min 5 characters
+                </div>
+                
+            </div>
+    </div>
+
+<div class="form-group">
+        <label class="labels m-2"> email:</label>
+        <input type="email" ngModel name="email" #e="ngModel" class="form-control " placeholder="abc@gmail.com" required email  [(ngModel)]="email">
+ 
+    <div *ngIf="f.controls['email']?.['touched'] && f.controls['email']?.['errors']" class="invalid"> <!--optionalchaning || validation || constraints:required-->
+       
+        <div *ngIf="f.controls['email']?.['errors']?.['required']"> <!--touched but if not enter anything then errors property true -->
+           email is required
+            </div>
+            <div *ngIf="f.controls['email']?.['errors']?.['email']">
+              invalid email
+            </div>
+    
+        </div>
+    </div>
+      
+
+  <div class="form-group">
+        <label class="labels m-2"> password:</label>
+    <input type="password" ngModel name="password" #p="ngModel" class="form-control " minlength="8" required  [(ngModel)]="passWord">
+   
+    <div *ngIf="f.controls['password']?.['touched'] && f.controls['password']?.['errors']" class="invalid">
+            <div *ngIf="f.controls['password']?.['errors']?.['required']">
+           password is required
+            </div>
+            
+            <div *ngIf="f.controls['password']?.['errors']?.['minlength']">
+                <b>password must be min 8 characters</b> 
+            </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="labels m-2"> cpassword:</label>
+<input type="password" ngModel name="cpassword" #p="ngModel" class="form-control " minlength="8" required>
+<!--
+<div *ngIf="f.controls['cpassword']?.['touched'] && f.controls['cpassword']?.['errors']" class="invalid">
+                 <div *ngIf="f.controls['cpassword']?.['errors']?.['required']">
+                    password is required
+                     </div>
+                     <div *ngIf="f.controls['cpassword']?.['value']!= f.controls['password']?.['value']&&f.controls['cpassword']?.['dirty']"  >
+                        passwords must match
+                             </div> 
+</div>
+-->
+
+<ng-container *ngIf="f.controls['cpassword']?.['touched'] && f.controls['cpassword']?.['errors']" class="invalid" >
+<div [ngSwitch]="expression">
+<div *ngSwitchCase="f.controls['cpassword']?.['value']!== f.controls['password']?.['value']&&f.controls['cpassword']?.['dirty']" >
+    passwords must match
+</div>
+<div *ngSwitchCase="f.controls['cpassword']?.['errors']?.['required']">
+    password is required
+</div>
+</div>
+</ng-container>
+</div>
+    
+ <!--   <div class="form-group">
+        <label class="labels m-2"> confirm password:</label>
+    <input type="password" ngModel name="cpassword" #u="ngModel" class="form-control " reqiured>
+    <div *ngIf="f.controls['cpassword']?.['touched'] && f.controls['cpassword']?.['errors']" class="invalid">
+       passwords must match
+            </div>
+            <div *ngIf="f.controls['cpassword']?.['errors']?.['required']">
+                password is required
+                </div>
+            
+    </div>-->
+
+    <div>
+         <label class="labels m-2"> Gender:</label>
+         <input type="radio" ngModel name="gender" value="F"  [(ngModel)]="gender">Female
+         <input type="radio" ngModel name="gender" value="M"  [(ngModel)]="gender">Male
+    </div>
+   
+<div>
+        <label class="labels m-2" > Subscribe:</label>
+        <input type="checkbox" ngModel name="subscribe"   [(ngModel)]="subscribe" >
+</div>
+        <button class="btn btn-primary m-2" (click)="submit()" [disabled]="f.invalid"> SignUp </button>
+  
+
+</form>
+<!-- {{d.datab |json}} -->
+{{d | json}}
+</div >
+</div>
+
+<!--
+
+<div style="color:red "> NOTE:</div>
+<div><ul>
+    <li>Template Driven Forms is one of the two ways to build forms in Angular, the other being Reactive Forms.
+    </li>
+    <li>Template Driven Forms rely heavily on HTML templates to create and manage form controls and their values.
+    </li>
+    <li>To create a Template Driven Form in Angular, you start by importing the FormsModule from @angular/forms in your app.module.ts file.
+    </li>
+    <li>Once the FormsModule is imported, you can use ngModel directive to bind a form control to a property in your component.</li>
+    <li>The ngModel directive is used to bind the value of the firstName input control to the user.firstName property in your component.
+    </li>
+    <li>You can also use other ngModel directives to create checkboxes, radio buttons, and select controls.
+    </li>
+    <li>To validate form controls in a Template Driven Form, you can use built-in Angular directives like ngRequired, ngMinLength, and ngMaxLength.
+    </li>
+    <li>Angular also provides a set of CSS classes that you can use to style form controls based on their validation state. These classes include ng-valid, ng-invalid, and ng-touched.</li>
+    <li>Template Driven Forms also support custom validation, which allows you to create your own validation functions and apply them to form controls.</li>
+    <li>To submit a Template Driven Form, you can use the ngSubmit event on the form element. This event is triggered when the user clicks the submit button or presses the enter key.
+    </li>
+    <li>When the ngSubmit event is triggered, you can access the form data by using the ngModel directive on the form element. This directive creates a FormGroup object that contains all the form controls and their values.
+    </li>
+    <li>You can also use the template reference variable (#) to access individual form controls and their values.</li>
+    <li>Template Driven Forms can be useful for creating simple forms that don't require a lot of dynamic behavior or complex validation.
+    </li>
+    <li>However, if you need more control over your forms, you may want to consider using Reactive Forms instead.</li>
+    
+
+</ul>
+<div> formControlStates:VALUE || TOUCHED || UNTOUCHED || DIRTY || PRISITINE || VALID || ERRORS || STATUS etc... </div>
+   
+</div> 
+-->
+

@@ -1,0 +1,98 @@
+
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+  
+    <h1 
+    [ngStyle]="{
+        'backgroundColor': easier ? 'green':'red',
+        'color':easier ? 'pink':'white'
+    }">
+    
+    <b> Angular Makes our Life Easier </b>
+    </h1>
+    
+    <h1 style="background-color:black;
+    background: darkblue;
+    color: white;">
+                        {{title}}
+    </h1>
+    <div>
+        <b><p style="background: grey;">What is Angular?</p></b>
+    </div>
+    
+    <div>
+        <p>A Front-end frame-work to build client side "SINGLE PAGE APPLICATIONS"
+             in HTML,CSS, and JavaScript/TypeScript.
+            It is a open-source and has component based architecture.</p>
+          <img [src]="imagePath" alt="OUR ANGULAR" width="500" height="300" style=" display: block; margin: auto;">
+    </div>
+    
+    <div>
+        <ul>
+            <li>Gives our applications a clean structure</li>
+            <li>Includes a lot of re-usable code</li>
+            <li>Makes our applications more testable</li>
+        </ul>
+      
+    </div>
+
+
+    <div class="invalid" style="display: inline;"><b>ANGULAR ROAD MAP</b><img style="position: relative;top: 10px;;column-gap:-10rem;" [src]="ngPath" alt="A"   height="70" width="200"  ></div>
+    <br>
+    <div style="display:flex;">
+          <div class="box1">
+        <ul> <b>TYPE SCRIPT BASICS:</b>
+            <li>What is a type script </li>
+            <li>Type annotations</li>
+            <li>Built in types</li>
+            <li>Type interface</li>
+            <li>Type inference</li>
+        </ul>
+    </div>
+    <div  style="float: left;justify-content: center;align-items: center;position: relative;top:50px">
+    <img [src]="arrowPath" alt="➡"  height="100" width="100"  ></div>
+    <div class="box1">
+        <ul><b>ANGULAR BASICS:</b>
+            <li>What is angular</li>
+            <li>Angular project structure</li>
+            <li>Components , directives & pipes</li>
+            <li>Routing & services</li>
+            <li>Data Binding</li>
+        </ul>
+    </div>
+    <div  style="float: left;vertical-align:middle; display: flex;position:relative;top:50px">
+        <img [src]="arrowPath" alt="➡"  height="100" width="100" ></div>
+    <div class="box1">
+        <ul><b>ANGULAR ADVANCED:</b>
+            <li>Custom directives, pipes</li>
+            <li>Modules and Lazy loading</li>
+            <li>Life cycle Hooks</li>
+            <li>Template and Reactive forms</li>
+            <li>Dependency injection</li>
+            <li>Authentication</li>
+        </ul>
+    </div>
+    <div  style="float: left;vertical-align:middle; display: flex;position:relative;top:50px">
+        <img [src]="arrowPath" alt="➡" height="100" width="100" style="float: left; margin-left: auto;margin-right: auto;vertical-align: middle;"></div>
+    <div class="box1">
+        <ul><b>RXJS BASICS:</b>
+            <li>Observables</li>
+            <li>Subjects & its types</li>
+            <li>Promises vs Observables</li>
+            <li>RXJS operations</li>
+        </ul>
+    </div>
+</div>
+<video width="500" height="400" controls  style="display: block;margin: auto">
+    <source [src]="vpath" type="video/mp4">
+    <!-- <source src="movie.ogg" type="video/ogg"> -->
+    Your browser does not support the video tag.
+  </video>
+
+<br>
+    <div>{{service}}</div>
+    <!-- <audio autoplay loop>
+        <source src="./assets/audio/bgsound.wav" type="audio/wav" height="0" width="2">
+        Your browser does not support the audio element.
+        </audio>     -->
+</div>

@@ -1,0 +1,9 @@
+<ul>
+    <li><a routerLink="/login-in" routerLinkActive="active" *ngIf="!this.as.isUserLoggedIn">Login</a></li>
+    <li><a (click)="this.as.logout()" style="cursor: pointer;color: white;" routerLinkActive="active" *ngIf="this.as.isUserLoggedIn">Logout</a></li>
+    <li><a routerLink="/introduction" routerLinkActive="active" *ngIf="this.as.isUserLoggedIn">Introduction</a></li>
+    <li><a routerLink="/content" routerLinkActive="active" *ngIf="this.as.isUserLoggedIn">Content</a></li>
+    <li><a routerLink="/builtin-pipes" routerLinkActive="active" *ngIf="this.as.isUserLoggedIn">BuiltinPipes</a></li>
+    <li><a routerLink="/reactive-form" routerLinkActive="active" >ReactiveForm</a></li>
+    <li><a routerLink="/data-base" routerLinkActive="active" *ngIf="this.as.isUserLoggedIn">DataBase</a></li>
+</ul>

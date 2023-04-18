@@ -1,0 +1,20 @@
+
+td
+{
+    padding: 5px 20px;
+    border: 2px solid grey;border-collapse: collapse;
+}
+th
+{
+    padding: 5px 20px;
+    border: 2px solid grey;border-collapse: collapse;
+}
+
+
+table{
+    /* border: 2px solid grey; */
+    /* width: 100%; */
+     border-collapse: collapse;
+}
+td:empty::before {content: "false"}
+

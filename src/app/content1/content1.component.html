@@ -1,0 +1,80 @@
+<app-myhttp></app-myhttp>
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>
+    SERVICES:
+</h6>
+<div>
+    Service is a class that has data(properties) or methods<br>
+   <b>SYNTAX:</b>  ng g s service-name (or) ng generate service service-name
+   <ul>
+    <li>It creates two files, namely:service.spec.ts and service.ts </li>
+    <li>We has to declare service file name in app.modue.ts in providers array.</li>
+    <li>saves memory,since we can declare logic at single place aka works as central file</li>
+    <li>angular creates it's instance for us ,while we inject this dependency(on which other components trying to depend upon)</li>
+   </ul>
+   <h5>NOTE:</h5><ul>
+    <li>from service we subscribes to observable.</li>
+   </ul>
+</div>
+</div>
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>ROUTING IN ANGULAR :</h6>
+<div>
+    <p>Routing is used to navigate from one component to another component in angular</p>
+    <ol>
+        <li>configuring the routes</li>
+        <li>Adding router outlet</li>
+        <li>Adding routing links in template</li>
+    </ol>
+</div>
+<p>https://www.name.com/products or https://ip address :port number/product</p>
+<div>route parameters</div>
+</div>
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+<h6>LIFE CYCLE HOOKS:</h6>
+<div [innerHTML]="lifecyclehooks | slice:0:end">
+   
+</div>
+<span class="text-danger" style="cursor:pointer" (click)="toggleArticle()">{{linkText}}</span>
+</div>
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+
+    <h6>FORM BUILDER:</h6>
+    <ul>
+        <li>FormBuilder in Angular is an in-built service for reactive forms with simple structure and syntax.</li>
+        <li>It has 3 methods:</li>
+        <li>group(),control() || [],array()</li>
+        <li>First import FormBuilder service class.</li>
+    </ul>
+</div>
+
+
+
+
+
+
+<div style="width: auto;margin: 20px 20px 20px 20px; border: 5px solid peru;padding: 10;">
+    <h6> ROUTE GUARDS :</h6>
+    <ul>
+        <li>To restirct the access to certain components by authentication.</li>
+        <li>We use the Angular Guards to control,whether the user can navigate to some page(route) or not i.e providing authorized access to routes.</li>
+        <li><b>USES OF ROUTES GUARDS:</b></li>
+        <li>Asking whether to save before moving away from view.</li>
+        <li>Allowing access to certain parts of the application to specific users.</li>
+        <li>Validating the routing parameters before navigating to route.</li>
+        <li>Fetching some data before you navigate to the route.</li>
+        <li><b>TYPES OF ROUTE GUARDS IN ANGULAR:</b></li>
+        <ol>
+            <li><b>CanActivate:</b>Used to check authentication 'before' entering into that specified component.</li>
+            <li><b>CanDeactivate:</b>Used to check authentication 'before' leaving into that specified component. </li>
+            <li><b>Resolve:</b>Used to do certain api task before leaving the component.</li>
+            <li><b>CanLoad:</b>Used to load only certain modules rather than all.</li>
+            <li><b>CanActivateChild:</b>Used to check whether the child components in a route should load or not.</li>
+        </ol>
+        <li>To use any route guards we have respectives methods ,which are implemented using service files.</li>
+        <li></li>
+    </ul>
+</div>

@@ -1,0 +1,12 @@
+/*   borders won't get overlap */
+
+td
+{
+    padding: 5px 20px;
+    border: 2px solid grey;
+}
+th
+{
+    padding: 5px 20px;
+    border: 2px solid grey;
+}
